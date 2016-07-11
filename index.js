@@ -7,7 +7,7 @@ var fs = require('fs');
 var filename = nodePath.join(os.tmpdir(), 'tempfile');
 console.log('Writing to ' + filename);
 
-var tmpstring = '1234567890'.repeat(10000);
+var tmpstring = new Array(10000).join('1234567890');
 fs.writeFileSync(filename, JSON.stringify(tmpstring));
 
 // Benchmarking
